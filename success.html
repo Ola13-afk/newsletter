@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Your newsletter subscription request was received."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Subscription confirmed</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-white font-sans text-[#242742] md:bg-[#36384e]">
+    <main
+      class="grid min-h-screen place-items-start md:place-items-center md:p-6"
+    >
+      <section
+        aria-labelledby="success-title"
+        class="flex min-h-screen w-full flex-col justify-between bg-white px-6 pb-8 pt-[clamp(2.5rem,17vh,9rem)] md:min-h-0 md:w-[504px] md:justify-start md:gap-8 md:rounded-[2rem] md:px-16 md:py-14 md:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
+      >
+        <div>
+          <img
+            src="./assets/images/icon-success.svg"
+            alt=""
+            class="h-16 w-16"
+          />
+          <h1
+            id="success-title"
+            class="mt-10 text-[2.5rem] font-bold leading-[1.05] tracking-[-0.035em] md:mt-8 md:text-[3.5rem]"
+          >
+            Thanks for subscribing!
+          </h1>
+          <p class="mt-5 text-base leading-6">
+            A confirmation email has been sent to
+            <strong id="submitted-email" class="font-bold"></strong>. Please
+            open it and click the button inside to confirm your subscription.
+          </p>
+        </div>
+        <a
+          href="./index.html"
+          class="newsletter-button mt-10 flex min-h-14 w-full items-center justify-center rounded-lg px-5 py-4 text-sm font-bold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff6155] md:mt-0"
+        >
+          Dismiss message
+        </a>
+      </section>
+    </main>
+    <script>
+      const email = new URLSearchParams(window.location.search).get("email");
+      document.querySelector("#submitted-email").textContent =
+        email || "your email address";
+    </script>
+  </body>
+</html>

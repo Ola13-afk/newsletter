@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Get product updates and insights delivered to your inbox."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Newsletter sign-up</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-white font-sans text-[#242742] md:bg-[#36384e]">
+    <main
+      class="grid min-h-screen place-items-start md:place-items-center md:p-6"
+    >
+      <section
+        id="signup-view"
+        aria-labelledby="signup-title"
+        class="w-full overflow-hidden bg-white md:flex md:w-full md:max-w-[928px] md:items-center md:gap-0 md:rounded-[2.25rem] md:p-6 md:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
+      >
+        <picture class="block w-full md:order-2 md:w-[45.45%] md:flex-none">
+          <source
+            media="(min-width: 768px)"
+            srcset="./assets/images/illustration-sign-up-desktop.svg"
+          />
+          <img
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            alt=""
+            class="block h-auto w-full"
+          />
+        </picture>
+
+        <div class="px-6 pb-10 pt-9 md:order-1 md:flex-1 md:px-10 md:py-10">
+          <h1
+            id="signup-title"
+            class="text-[2.5rem] font-bold leading-[1.05] tracking-[-0.035em] md:text-[3.5rem]"
+          >
+            Stay updated!
+          </h1>
+          <p class="mt-5 text-base leading-6">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+
+          <ul class="mt-5 space-y-3 text-base leading-6">
+            <li class="flex items-start gap-4">
+              <img
+                src="./assets/images/icon-list.svg"
+                alt=""
+                class="mt-[2px] h-[21px] w-[21px] shrink-0"
+              />
+              <span>Product discovery and building what matters</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <img
+                src="./assets/images/icon-list.svg"
+                alt=""
+                class="mt-[2px] h-[21px] w-[21px] shrink-0"
+              />
+              <span>Measuring to ensure updates are a success</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <img
+                src="./assets/images/icon-list.svg"
+                alt=""
+                class="mt-[2px] h-[21px] w-[21px] shrink-0"
+              />
+              <span>And much more!</span>
+            </li>
+          </ul>
+
+          <form id="signup-form" class="mt-10" novalidate>
+            <div class="mb-2 flex items-center justify-between gap-3">
+              <label for="email" class="text-xs font-bold">Email address</label>
+              <span
+                id="email-error"
+                class="hidden text-xs font-bold text-[#ff6155]"
+                aria-live="polite"
+              ></span>
+            </div>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              inputmode="email"
+              placeholder="email@company.com"
+              required
+              aria-describedby="email-error"
+              class="email-input h-14 w-full rounded-lg border border-[#c8c8c8] px-6 text-base outline-none placeholder:text-[#9294a0] focus:border-[#242742] focus:ring-1 focus:ring-[#242742]"
+            />
+            <button
+              type="submit"
+              class="newsletter-button mt-6 min-h-14 w-full rounded-lg px-5 py-4 text-sm font-bold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff6155]"
+            >
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        id="success-view"
+        aria-labelledby="success-title"
+        class="hidden min-h-screen w-full flex-col justify-between bg-white px-6 pb-8 pt-[clamp(2.5rem,17vh,9rem)] md:min-h-0 md:w-[504px] md:justify-start md:gap-8 md:rounded-[2rem] md:px-16 md:py-14 md:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
+      >
+        <div>
+          <img
+            src="./assets/images/icon-success.svg"
+            alt=""
+            class="h-16 w-16"
+          />
+          <h2
+            id="success-title"
+            tabindex="-1"
+            class="mt-10 text-[2.5rem] font-bold leading-[1.05] tracking-[-0.035em] md:mt-8 md:text-[3.5rem]"
+          >
+            Thanks for subscribing!
+          </h2>
+          <p class="mt-5 text-base leading-6">
+            A confirmation email has been sent to
+            <strong id="submitted-email" class="font-bold"></strong>. Please
+            open it and click the button inside to confirm your subscription.
+          </p>
+        </div>
+        <button
+          id="dismiss-button"
+          type="button"
+          class="newsletter-button mt-10 min-h-14 w-full rounded-lg px-5 py-4 text-sm font-bold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff6155] md:mt-0"
+        >
+          Dismiss message
+        </button>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
